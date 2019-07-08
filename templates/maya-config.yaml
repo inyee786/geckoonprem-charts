@@ -53,6 +53,7 @@ data:
     mysql.billing.username=billing
     mysql.billing.database.name=maya
     mysql.billing.password=billing
+    feature.subscription.disable=false
     feature.mdape2e.disable=true
     feature.tour.disable=true
     feature.solution.disable=true
@@ -60,6 +61,7 @@ data:
     feature.support.disable=true
     feature.email.disable=true
     feature.analytics.disable=true
+    feature.mayaonpremregistration.disable=true
     feature.chatbot.disable={{ .Values.server.featureChatBotDisable }}
     slack.config.bot.client.id={{ .Values.server.slackConfigBotClientId }}
     slack.config.bot.client.secret={{ .Values.server.slackConfigBotClientSecret }}
