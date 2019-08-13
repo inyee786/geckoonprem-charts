@@ -30,6 +30,7 @@ data:
     maya.cortex.pull.url={{ .Values.server.protocol }}://{{ .Values.server.url }}/maya-cortex-pull/api/prom
     maya.cortex.configs.url={{ .Values.server.protocol }}://{{ .Values.server.url }}/maya-cortex-configs/api/prom/configs/rules
     maya.cortex.am.url={{ .Values.server.protocol }}://{{ .Values.server.url }}/maya-cortex-am/api/prom/alertmanager/
+    maya.cortex.querier.url=http://querier.{{ .Release.Namespace }}.svc.{{ .Values.server.clusterDomain }}/
     maya.alertstore.url=http://alertstore.{{ .Release.Namespace }}.svc.{{ .Values.server.clusterDomain }}/
     maya.alertstore.tablemanager.url=http://alertstore-tablemanager.{{ .Release.Namespace }}.svc.{{ .Values.server.clusterDomain }}/
     maya.alertstore.ingress.url={{ .Values.server.protocol }}://{{ .Values.server.url }}/alertstore/alerts
