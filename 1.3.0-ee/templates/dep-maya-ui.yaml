@@ -6,11 +6,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: maya-ui
+      name: maya-ui
   template:
     metadata:
       labels:
-        app: maya-ui
+        name: maya-ui
     spec:
       initContainers:
       - name: config-data

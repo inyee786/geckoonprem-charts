@@ -4,6 +4,9 @@ metadata:
   name: querier
 spec:
   replicas: {{ .Values.querier.replicas }}
+  selector:
+    matchLabels:
+      name: querier    
   template:
     metadata:
       labels:

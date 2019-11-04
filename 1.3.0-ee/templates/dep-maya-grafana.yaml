@@ -5,6 +5,9 @@ metadata:
     app: maya-grafana
   name: maya-grafana
 spec:
+  selector:
+    matchLabels:
+      app: maya-grafana 
   template:
     metadata:
       labels:

@@ -4,6 +4,9 @@ metadata:
   name: configs
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: configs  
   template:
     metadata:
       labels:

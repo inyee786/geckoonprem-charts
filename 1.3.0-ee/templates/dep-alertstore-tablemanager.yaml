@@ -4,6 +4,9 @@ metadata:
   name: alertstore-tablemanager
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: alertstore-tablemanager  
   template:
     metadata:
       labels:

@@ -4,6 +4,9 @@ metadata:
   name: table-manager
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: table-manager     
   template:
     metadata:
       labels:

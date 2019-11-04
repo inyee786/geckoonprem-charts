@@ -4,6 +4,9 @@ metadata:
   name: ruler
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: ruler   
   template:
     metadata:
       labels:

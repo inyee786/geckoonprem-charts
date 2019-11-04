@@ -4,12 +4,15 @@ metadata:
   name: maya-io
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: maya-io  
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app : maya-io
+        name : maya-io
     spec:
       serviceAccountName: sa-maya-io
       initContainers:
