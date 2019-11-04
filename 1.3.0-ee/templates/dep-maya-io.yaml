@@ -6,13 +6,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: maya-io  
+      app: maya-io  
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        name : maya-io
+        app : maya-io
     spec:
       serviceAccountName: sa-maya-io
       initContainers:
