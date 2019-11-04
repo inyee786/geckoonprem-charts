@@ -13,10 +13,10 @@ server:
   serverDefaultAccessGrant: true
   apiUiEnabled: true
   setupName: geckoonprem
-  apiAuthExternalProviderEnabled: true
-  apiAuthExternalProviderConfigured: githubconfig
-  apiAuthInternalProviderEnabled: false
-  apiAuthInternalProviderConfigured:
+  apiAuthExternalProviderEnabled: false
+  apiAuthExternalProviderConfigured: 
+  apiAuthInternalProviderEnabled: true
+  apiAuthInternalProviderConfigured: localAuthConfig
   apiAuthEnabler:
   apiAuthGithubClientId:
   apiAuthGithubClientSecret:
@@ -40,25 +40,30 @@ server:
   analyticsGoogleCode:
 
 mysql:
-  storageClass: openebs-jiva-default
+  #storageClass: openebs-jiva-default
+  storageClass: standard
   storageCapacity: 50Gi
 
 elasticSearch:
-  storageClass: openebs-hostpath
+  #storageClass: openebs-hostpath
+  storageClass: standard
   storageCapacity: 50Gi
   replicas: 1
 
 cassandra:
-  storageClass: openebs-hostpath
+  #storageClass: openebs-hostpath
+  storageClass: standard
   storageCapacity: 50Gi
   replicas: 1
 
 mayaStore:
-  storageClass: cstor-storage-class
+  #storageClass: cstor-storage-class
+  storageClass: standard
   storageCapacity: 10Gi
 
 grafana:
-  storageClass: cstor-storage-class
+  #storageClass: cstor-storage-class
+  storageClass: standard
   storageCapacity: 50Gi
 
 cortex:
