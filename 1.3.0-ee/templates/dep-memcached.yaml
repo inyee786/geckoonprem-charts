@@ -4,6 +4,9 @@ metadata:
   name: memcached
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: memcached  
   template:
     metadata:
       labels:
