@@ -13,6 +13,7 @@ spec:
       labels:
         app: mysql
     spec:
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
       containers:
       - env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
@@ -24,7 +25,6 @@ spec:
         - name: MYSQL_PASSWORD
           value: "maya"
         image: mysql:5.7
-        imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
             command:
@@ -109,7 +109,6 @@ spec:
           exec ncat --listen --keep-open --send-only --max-conns=1 3307 -c \
             "xtrabackup --backup --slave-info --stream=xbstream --host=127.0.0.1 --user=root"
         image: gcr.io/google-samples/xtrabackup:1.0
-        imagePullPolicy: IfNotPresent
         name: xtrabackup
         ports:
         - containerPort: 3307
@@ -147,7 +146,6 @@ spec:
             cp /mnt/config-map/slave.cnf /mnt/conf.d/
           fi
         image: mysql:5.7
-        imagePullPolicy: IfNotPresent
         name: init-mysql
         resources: {}
         terminationMessagePath: /dev/termination-log
@@ -173,7 +171,6 @@ spec:
           # Prepare the backup.
           xtrabackup --prepare --target-dir=/var/lib/mysql
         image: gcr.io/google-samples/xtrabackup:1.0
-        imagePullPolicy: IfNotPresent
         name: clone-mysql
         resources: {}
         terminationMessagePath: /dev/termination-log

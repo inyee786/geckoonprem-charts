@@ -17,7 +17,6 @@ spec:
       containers:
       - name: configs-db
         image: postgres:9.6
-        imagePullPolicy: IfNotPresent
         env:
           - name: POSTGRES_DB
             value: configs
@@ -25,4 +24,5 @@ spec:
         - containerPort: 5432
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
 

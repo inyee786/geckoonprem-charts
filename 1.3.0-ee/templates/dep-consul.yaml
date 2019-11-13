@@ -15,7 +15,6 @@ spec:
       containers:
       - name: consul
         image: consul:0.7.1
-        imagePullPolicy: IfNotPresent
         args:
         - agent
         - -ui
@@ -36,4 +35,5 @@ spec:
           containerPort: 8500
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
 

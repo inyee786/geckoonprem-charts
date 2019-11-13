@@ -156,7 +156,6 @@ spec:
             - "--db-name"
             - "maya"
           image: registry.mayadata.io/maya-io-server:{{ .Values.server.release }}
-          imagePullPolicy: Always
           ports:
           - containerPort: 8080
           volumeMounts:
@@ -167,6 +166,7 @@ spec:
             subPath: maya.properties
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
       volumes:
       - name: maya-store
         persistentVolumeClaim:
