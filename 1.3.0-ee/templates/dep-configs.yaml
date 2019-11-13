@@ -50,7 +50,6 @@ spec:
       containers:
       - name: configs
         image: registry.mayadata.io/cortex-configs:{{ .Values.server.release }}
-        imagePullPolicy: Always
         args:
         - -server.http-listen-port=80
         - -database.uri=postgres://postgres@configs-db.{{ .Release.Namespace }}.svc.{{ .Values.server.clusterDomain }}/configs?sslmode=disable
@@ -59,4 +58,5 @@ spec:
         - containerPort: 80
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
 

@@ -20,9 +20,9 @@ spec:
       containers:
         - name: cloud-agent
           image: registry.mayadata.io/cloud-agent:{{ .Values.server.release }}
-          imagePullPolicy: Always
           ports:
             - containerPort: 8880
               protocol: TCP
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}

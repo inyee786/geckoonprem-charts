@@ -16,10 +16,10 @@ spec:
         app: cassandra
     spec:
       terminationGracePeriodSeconds: 1800
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
       containers:
       - name: cassandra
         image: gcr.io/google-samples/cassandra:v13
-        imagePullPolicy: Always
         ports:
         - containerPort: 7000
           name: intra-node
