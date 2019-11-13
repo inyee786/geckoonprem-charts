@@ -24,7 +24,6 @@ spec:
         - name: ELASTICSEARCH_HOSTS
           value: http://od-elasticsearch-logging:9200/
         image: registry.mayadata.io/maya-kibana:{{ .Values.server.release }}
-        imagePullPolicy: Always
         name: kibana-logging
         ports:
         - containerPort: 5601
@@ -37,4 +36,5 @@ spec:
             cpu: 100m
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
 

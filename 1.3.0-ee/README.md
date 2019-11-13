@@ -23,6 +23,7 @@ The following table lists the configurable parameters of the GeckoOnprem chart a
 
 | Parameter                                       | Description                                   | Default                                   |
 | ------------------------------------------------|-----------------------------------------------| ------------------------------------------|
+| `image.pullPolicy`                           | Container pull policy        |      IfNotPresent                                 |
 | `server.dockerSecret`                           | Docker secret for pulling the images          |      none                                 |
 | `server.protocol`                               | http/https protocol for accessing the UI      |      http                                 |
 | `server.url`                                    | url/IP address:port for UI                    |      none                                 |

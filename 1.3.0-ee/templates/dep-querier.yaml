@@ -81,7 +81,6 @@ spec:
       containers:
       - name: querier
         image: quay.io/cortexproject/querier:master-590e72c6
-        imagePullPolicy: IfNotPresent
         args:
         - -server.http-listen-port=80
         - -consul.hostname=consul.{{ .Release.Namespace }}.svc.{{ .Values.server.clusterDomain }}:8500
@@ -107,4 +106,5 @@ spec:
         - containerPort: 80
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
 

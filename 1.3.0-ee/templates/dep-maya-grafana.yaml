@@ -16,7 +16,6 @@ spec:
       containers:
       - image: registry.mayadata.io/graph-reporter:{{ .Values.server.release }}
         name: grafana-reporter
-        imagePullPolicy: Always
         ports:
         - containerPort: 8686
       - env:
@@ -25,7 +24,6 @@ spec:
         - name: GF_AUTH_ANONYMOUS_ENABLED
           value: "false"
         image: registry.mayadata.io/maya-grafana:{{ .Values.server.release }}
-        imagePullPolicy: Always
         name: master-grafana
         ports:
         - containerPort: 3000
@@ -39,6 +37,7 @@ spec:
         runAsUser: 104
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
       volumes:
       - configMap:
           name: maya-grafana-cfgmap

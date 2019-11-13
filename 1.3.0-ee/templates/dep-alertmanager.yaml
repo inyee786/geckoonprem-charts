@@ -65,7 +65,6 @@ spec:
       containers:
       - name: alertmanager
         image: registry.mayadata.io/cortex-alertmanager:{{ .Values.server.release }}
-        imagePullPolicy: Always
         args:
         - -log.level=debug
         - -server.http-listen-port=80
@@ -75,4 +74,5 @@ spec:
         - containerPort: 80
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
 

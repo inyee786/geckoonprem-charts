@@ -113,7 +113,6 @@ spec:
       containers:
       - name: ruler
         image: quay.io/cortexproject/ruler:master-590e72c6
-        imagePullPolicy: IfNotPresent
         args:
         - -log.level=debug
         - -server.http-listen-port=80
@@ -143,4 +142,5 @@ spec:
         - containerPort: 80
       imagePullSecrets:
       - name: {{ .Values.server.dockerSecret }}
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
 
