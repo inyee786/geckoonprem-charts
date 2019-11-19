@@ -28,8 +28,9 @@ server:
   clusterDomain: cluster.local
   featureSubscriptionDisable: false
   subscriptionType: internal
-  featureBillingDisable: true
-  billingType: external
+  featureBillingDisable: false
+  billingType: internal
+  featureCortexQuerierDisable: false
   featureEmailDisable: true
   senderEmailAddress:
   senderEmailPassword:
@@ -39,7 +40,8 @@ server:
   slackConfigBotClientId:
   slackConfigBotClientSecret:
   slackNotificationWelcomeMessage:
-  featureKialiDisable: true
+  featureKialiDisable: false
+  featureLitmusDisable: false
   analyticsGoogleCode:
   autoconnectLocalCluster: true
 

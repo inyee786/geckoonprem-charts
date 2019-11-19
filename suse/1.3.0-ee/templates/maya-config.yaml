@@ -52,8 +52,8 @@ data:
     feature.mdape2e.disable=true
     feature.tour.disable=true
     feature.mayaonpremregistration.disable=true
-    feature.cortexquerier.disable=true
-    feature.litmus.disable=true
+    feature.cortexquerier.disable={{ .Values.server.featureCortexQuerierDisable }}
+    feature.litmus.disable={{ .Values.server.featureLitmusDisable }}
     feature.rbac.disable=true
     feature.zendesk.disable=true
     feature.chatbot.disable={{ .Values.server.featureChatBotDisable }}
