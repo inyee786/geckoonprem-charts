@@ -53,6 +53,7 @@ data:
     feature.tour.disable=true
     feature.mayaonpremregistration.disable=true
     feature.cortexquerier.disable={{ .Values.server.featureCortexQuerierDisable }}
+    maya.cortex.querier.url=http://querier.default.svc.cluster.local:80/
     feature.litmus.disable={{ .Values.server.featureLitmusDisable }}
     feature.rbac.disable=true
     feature.zendesk.disable=true
